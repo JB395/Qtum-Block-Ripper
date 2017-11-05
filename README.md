@@ -2,7 +2,7 @@
 A simple program to extract parameters from Qtum blocks.
 
 A program to walk the Qtum blockchain and extract the Bits value, which sets the target for the SHA-256 hash on the next block.
-The ripper uses qtum-cli to query a running qtumd server applicaion to grab the block number and Bits for each block. Run from teh same directory as qtum-cli.
+The ripper uses qtum-cli to query a running qtumd server applicaion to grab the block number and Bits for each block. Run from the same directory as qtum-cli.
 
 Sample printed output starting with block 37000 for 10 blocks:
 
