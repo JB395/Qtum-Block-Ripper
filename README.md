@@ -19,3 +19,7 @@ block,time,mediantime,difficulty bits, difficulty
 37008,1509492304,1509491552,639253,1719968.229417774
 37009,1509492592,1509491664,499416,2201561.124513432
 
+For these console commands documented below, responses are given for default parameters (Qtum version 0.16 – winter 2018/2019). Commands marked DEPRECATED should not be used because they will be removed and replaced in future versions of the wallet, for example, commands using “account” will be removed in version 0.18.
+
+Using the command ‘help <command name>` will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases parameters or responses are truncated with the term `<snip>`. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return “null” for qtum-qt and return nothing for command line systems.
+
