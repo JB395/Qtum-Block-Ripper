@@ -20,4 +20,29 @@ block,time,mediantime,difficulty bits, difficulty
 37009,1509492592,1509491664,499416,2201561.124513432
 
 
-Using the command “help \<command name\>” will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases parameters or responses are truncated with the term “\<snip\>”. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return “null” for qtum-qt and return nothing for command line systems.
+### getchaintxstats ( nblocks blockhash )
+
+Compute statistics about the total number and rate of transactions in the chain, where the default “window” is the last one month.
+
+* “time” gives the UNIX timestamp for the last block in the window
+* “txcount” gives the total transactions from the start of the chain
+* “window_block_count” gives the number of blocks in the window (675 * 30)
+* “window_interval” gives the window length in seconds
+* “txrate” gives the average transactions per second (TPS) in the window
+
+
+```
+getchaintxstats
+
+{
+  "time": 1540774144,
+  "txcount": 2361329,
+  "window_block_count": 20250,
+  "window_tx_count": 135311,
+  "window_interval": 2928224,
+  "txrate": 0.046209238091075
+}
+```
+
+### getconnectioncount
+
