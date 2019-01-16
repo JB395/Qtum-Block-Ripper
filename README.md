@@ -20,5 +20,5 @@ block,time,mediantime,difficulty bits, difficulty
 37009,1509492592,1509491664,499416,2201561.124513432
 
 
-Using the command ‘help \<command name\>\` will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases parameters or responses are truncated with the term `\<snip\>\`. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return “null” for qtum-qt and return nothing for command line systems.
+Using the command “help \<command name\>” will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases parameters or responses are truncated with the term “\<snip\>\”. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return “null” for qtum-qt and return nothing for command line systems.
 
