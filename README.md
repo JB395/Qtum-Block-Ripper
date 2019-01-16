@@ -20,35 +20,39 @@ block,time,mediantime,difficulty bits, difficulty
 37009,1509492592,1509491664,499416,2201561.124513432
 
 
-### getstakinginfo
+### getwalletinfo
 
-Returns staking-related information.
+Returns information about the wallet:
 
-* “enabled”: true means the wallet was launched with staking allowed (command line option `-staking=false` was not used)
-* “staking”: true means the wallet is staking (decrypted, mature coins, blockchain synced)
-* “errors” gives the various errors (rare)
-* “currentblocktx” gives the number of transactions in a block mined by the wallet
-* “pooledtx” gives the number of transactions waiting in the mempool
-* “difficulty” gives the PoS target difficulty for the current block
-* “search-interval” gives either the time in seconds since the wallet began staking or the time since the wallet’s most recent block reward, here one day and one minute
-* “weight” gives the wallet weight in Satoshis, move the decimal point eight digits to the left to give these weights in units, here wallet weight is 148 QTUM and the network weight is 12.23 million
-* “netstakeweight” gives the estimated network weight
-* “expected time” gives an estimate of the average expected time to a block reward in seconds, here 4.59 months
+* “walletname" – the name of the wallet.dat file currently loaded
+* "walletversion" – not the software client version, use `getnetworkinfo` to check this
+* "balance" – balance in QTUM
+* "stake" – any balance currently committed to a stake
+* "unconfirmed_balance" – any balance that hasn’t been published in the next blocks
+* "immature_balance" – any coinbase (Proof of Work) balance that does not have 500 confirmations, seen only for regtest.
+* "txcount" – the total number of transactions in the wallet
+* "keypoololdest" – the Unix epoch timestamp in seconds for the oldest key in the key pool
+* "keypoolsize" - how many new keys are pre-generated
+* "keypoolsize_hd_internal" - how many new keys are pre-generated for internal use (used for change addresses)
+* "unlocked_until" – the Unix epoch time in seconds that the wallet is unlocked, or 0 if the wallet is locked, this field is omitted for unencrypted wallets.
+* "paytxfee" – the transaction fee in QTUM per 1,000 bytes
+* "hdmasterkeyid" – a Hash 160 of the hierarchical deterministic (HD) master public key, this field is omitted if HD is not enabled
 
 ```
-getstakinginfo
-
+getwalletinfo
 {
-  "enabled": true,
-  "staking": true,
-  "errors": "",
-  "currentblocktx": 0,
-  "pooledtx": 2,
-  "difficulty": 4096615.946734428,
-  "search-interval": 86460,
-  "weight": 14807063425,
-  "netstakeweight": 1223152433452116,
-  "expectedtime": 11897280
+  "walletname": "wallet.dat",
+  "walletversion": 130000,
+  "balance": 1.53160855,
+  "stake": 0.00000000,
+  "unconfirmed_balance": 0.00000000,
+  "immature_balance": 0.00000000,
+  "txcount": 94,
+  "keypoololdest": 1507072726,
+  "keypoolsize": 952,
+  "unlocked_until": 0,
+  "paytxfee": 0.00000000,
+  "hdmasterkeyid": "c1c081490c4dc42b3e3431683052df36bc583fbe5"
 }
 ```
 
