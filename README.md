@@ -329,7 +329,6 @@ File:
 
   extended private masterkey: <snip>
 ```
-```
 
 On Mac:
 
@@ -801,7 +800,7 @@ Returns the hash of the main blockchain for the given block height (not an orpha
 getblockhash 244848
 
 8c0a43d58e96bd081209243eb9406c98ab3771c900cc05d793a62c48f3b1c03f
-
+```
 
 ### getblockheader "hash" ( verbose )
 
@@ -2131,7 +2130,7 @@ Updates list of temporarily unspendable outputs. Temporarily lock (unlock=false 
 A locked transaction output will not be chosen by automatic coin selection, when spending QTUM.
 Locks are stored in memory only. Wallets launch with zero locked outputs, and the locked output list is always cleared (by virtue of process exit) when a wallet stops or fails. Also see the `listunspent` call.
 
-‘’’
+```
 lockunspent false "[{\"txid\":\"9fc384b55230ca1899dd1acf081033ebf57ae0335abf692c4f8a6336befc2f6\",\"vout\":1}]"
 
 true
@@ -2183,7 +2182,7 @@ DEPRECATED. Move a specified amount from one account in your wallet to another. 
 move "Test Addr" "LTCp2shsegwit" 1.1
 
 true
-``
+```
 
 ### ping
 
@@ -2379,7 +2378,7 @@ Send to multiple addresses, requires the wallet to unlocked. Amounts are floatin
 sendmany "" "{\"QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5\":0.5,\"QM5yJs3v3u9vAVE5XseFa9g63ke6Ld9Wp\":0.77}"
 
 7a5077ac6e42acbed182c35eb034702e1fadd5c7d1547a85ae63dc0e151ed5
-
+```
 
 ### sendmanywithdupes "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] )
 
@@ -2772,8 +2771,3 @@ walletpassphrasechange "you should always use a long and strong passphrase" "ple
 
 null
 ```
-
-
-
-
-
