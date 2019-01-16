@@ -20,29 +20,35 @@ block,time,mediantime,difficulty bits, difficulty
 37009,1509492592,1509491664,499416,2201561.124513432
 
 
-### getchaintxstats ( nblocks blockhash )
+### getstakinginfo
 
-Compute statistics about the total number and rate of transactions in the chain, where the default “window” is the last one month.
+Returns staking-related information.
 
-* “time” gives the UNIX timestamp for the last block in the window
-* “txcount” gives the total transactions from the start of the chain
-* “window_block_count” gives the number of blocks in the window (675 * 30)
-* “window_interval” gives the window length in seconds
-* “txrate” gives the average transactions per second (TPS) in the window
-
+* “enabled”: true means the wallet was launched with staking allowed (command line option `-staking=false` was not used)
+* “staking”: true means the wallet is staking (decrypted, mature coins, blockchain synced)
+* “errors” gives the various errors (rare)
+* “currentblocktx” gives the number of transactions in a block mined by the wallet
+* “pooledtx” gives the number of transactions waiting in the mempool
+* “difficulty” gives the PoS target difficulty for the current block
+* “search-interval” gives either the time in seconds since the wallet began staking or the time since the wallet’s most recent block reward, here one day and one minute
+* “weight” gives the wallet weight in Satoshis, move the decimal point eight digits to the left to give these weights in units, here wallet weight is 148 QTUM and the network weight is 12.23 million
+* “netstakeweight” gives the estimated network weight
+* “expected time” gives an estimate of the average expected time to a block reward in seconds, here 4.59 months
 
 ```
-getchaintxstats
+getstakinginfo
 
 {
-  "time": 1540774144,
-  "txcount": 2361329,
-  "window_block_count": 20250,
-  "window_tx_count": 135311,
-  "window_interval": 2928224,
-  "txrate": 0.046209238091075
+  "enabled": true,
+  "staking": true,
+  "errors": "",
+  "currentblocktx": 0,
+  "pooledtx": 2,
+  "difficulty": 4096615.946734428,
+  "search-interval": 86460,
+  "weight": 14807063425,
+  "netstakeweight": 1223152433452116,
+  "expectedtime": 11897280
 }
 ```
-
-### getconnectioncount
 
