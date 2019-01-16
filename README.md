@@ -20,39 +20,15 @@ block,time,mediantime,difficulty bits, difficulty
 37009,1509492592,1509491664,499416,2201561.124513432
 
 
-### getwalletinfo
+# Commands 1-15-2019
 
-Returns information about the wallet:
+The Qtum Core wallet has a rich set of commands which give comprehensive control of the wallet and blockchain transactions. There are two sets of commands that may be used with Qtum Core wallets:
 
-* “walletname" – the name of the wallet.dat file currently loaded
-* "walletversion" – not the software client version, use `getnetworkinfo` to check this
-* "balance" – balance in QTUM
-* "stake" – any balance currently committed to a stake
-* "unconfirmed_balance" – any balance that hasn’t been published in the next blocks
-* "immature_balance" – any coinbase (Proof of Work) balance that does not have 500 confirmations, seen only for regtest.
-* "txcount" – the total number of transactions in the wallet
-* "keypoololdest" – the Unix epoch timestamp in seconds for the oldest key in the key pool
-* "keypoolsize" - how many new keys are pre-generated
-* "keypoolsize_hd_internal" - how many new keys are pre-generated for internal use (used for change addresses)
-* "unlocked_until" – the Unix epoch time in seconds that the wallet is unlocked, or 0 if the wallet is locked, this field is omitted for unencrypted wallets.
-* "paytxfee" – the transaction fee in QTUM per 1,000 bytes
-* "hdmasterkeyid" – a Hash 160 of the hierarchical deterministic (HD) master public key, this field is omitted if HD is not enabled
+* Console commands are given to a wallet that is already running.
+* Startup commands are used when starting up a wallet.
 
-```
-getwalletinfo
-{
-  "walletname": "wallet.dat",
-  "walletversion": 130000,
-  "balance": 1.53160855,
-  "stake": 0.00000000,
-  "unconfirmed_balance": 0.00000000,
-  "immature_balance": 0.00000000,
-  "txcount": 94,
-  "keypoololdest": 1507072726,
-  "keypoolsize": 952,
-  "unlocked_until": 0,
-  "paytxfee": 0.00000000,
-  "hdmasterkeyid": "c1c081490c4dc42b3e3431683052df36bc583fbe5"
-}
-```
+This manual focuses on the console commands which are given to a wallet that is running and can be sent using RPC (Remote Procedure Calls) or on the command line to the qtumd server wallet or given to the qtum-qt desktop GUI (Graphical User Interface) wallet using the Debug window Console command line:
 
+![2019-1 Mac Debug Window with Prompt](https://i.imgur.com/K0uCLVr.jpg)
+
+For the server wallet qtumd, console commands are given using the Command Line Interface application qtum-cli on the system command line prompt:
