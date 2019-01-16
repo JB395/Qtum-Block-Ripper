@@ -19,4 +19,3 @@ block,time,mediantime,difficulty bits, difficulty
 37008,1509492304,1509491552,639253,1719968.229417774
 37009,1509492592,1509491664,499416,2201561.124513432
 
-The chain query bitcoin API reference http://chainquery.com/bitcoin-api explains the parameters and gives examples with responses for the commands inherited from bitcoin. The bitcoin chain query API reverence gives 67 commands, of which 2 are not in Qtum (`estimatepriority`, `getgenerate`) and two (`gettransaction`, `walletpassphrase`) have an additional parameter for Qtum. See also https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs.
